@@ -1,0 +1,356 @@
+---
+const navItems = [
+  ['Journey', '#journey'],
+  ['AI', '#ai'],
+  ['Work', '#work'],
+  ['People', '#people'],
+  ['Insights', '#insights'],
+];
+
+const milestones = [
+  ['2006', 'Animator', 'I learned to tell stories.'],
+  ['2008', 'Designer', 'I learned to communicate visually.'],
+  ['2010', 'Learning', 'I learned how people learn.'],
+  ['2016', 'UX & Product', 'I learned how experiences create value.'],
+  ['Today', 'AI & Transformation', 'I help people and technology work better together.'],
+];
+
+const focusAreas = [
+  ['01', 'AI Product Strategy', 'Turning opportunities into useful, responsible product experiences.'],
+  ['02', 'Human + AI Workflows', 'Designing intelligent workflows where people retain judgment and control.'],
+  ['03', 'Decision Intelligence', 'Making complex business data clearer through executive dashboards and actionable insight.'],
+];
+
+const work = [
+  [
+    'AI',
+    'Executive Dashboards',
+    'Enterprise dashboards for AI-driven decision making and digital transformation initiatives.',
+    'Dashboard Screenshots'
+  ],
+  [
+    'UX',
+    'UI / UX Design',
+    'Professional UI and dashboard designs delivered across enterprise platforms.',
+    'UI Gallery'
+  ],
+  [
+    'Video',
+    'Animation Portfolio',
+    'Corporate learning, animation and multimedia projects.',
+    'YouTube Videos'
+  ],
+  [
+    'Book',
+    'YUVA LSP',
+    'Leadership Simulation Program (Coming Soon)',
+    'Book Gallery'
+  ],
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Kumar Shubhek — creativity, product strategy, AI and meaningful digital transformation." />
+    <meta name="theme-color" content="#0b0b0d" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet" />
+    <title>Kumar Shubhek | Human by Design. Intelligent by Innovation.</title>
+  </head>
+  <body>
+    <header class="nav-wrap">
+      <nav class="nav container" aria-label="Main navigation">
+        <a class="brand" href="#top" aria-label="Kumar Shubhek home">KS<span>.</span></a>
+        <div class="nav-links">
+          {navItems.map(([label, href]) => <a href={href}>{label}</a>)}
+        </div>
+        <a class="nav-contact" href="#contact">Let’s connect <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero container">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> Kumar Shubhek — 2006 to now</p>
+          <h1>My career didn’t begin with AI.<br /><em>It began with a pencil.</em></h1>
+          <p class="hero-intro">A creative foundation that evolved into product thinking, intelligent experiences, and people-centred transformation.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#journey">Explore my journey <span>↓</span></a>
+            <a class="button button-outline" href="/resume/Shubhek_Kumar_Resume.pdf" download>Resume</a>
+            <a class="button button-outline" href="/resume/Shubhek_Kumar_Cover_Letter.pdf" download>Cover Letter</a>
+          </div>
+        </div>
+        <div class="pencil-art">
+          <img src="/images/shubhek-profile.jpg" alt="Shubhek Kumar" class="profile-photo" />
+          <div class="overlay"></div>
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="line line-one"></div>
+          <div class="line line-two"></div>
+          <p>CREATIVITY → CLARITY → INTELLIGENCE</p>
+        </div>
+      </section>
+
+      <section class="statement-band">
+        <div class="container statement-grid">
+          <p class="eyebrow">A different starting point</p>
+          <p class="statement">I learned how people feel <em>before</em> I learned how technology works.</p>
+        </div>
+      </section>
+
+      <section id="journey" class="section container">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="eyebrow">01 — Journey</p>
+            <h2>Every chapter added a new way of seeing.</h2>
+          </div>
+          <p>From animation to AI, the journey has never been a straight line. Each transition has made the next one possible.</p>
+        </div>
+        <div class="timeline">
+          {milestones.map(([year, title, copy], index) => (
+            <article class:list={['timeline-item', { current: index === milestones.length - 1 }]}>
+              <span class="timeline-index">0{index + 1}</span>
+              <div class="timeline-dot"></div>
+              <p class="timeline-year">{year}</p>
+              <h3>{title}</h3>
+              <p>{copy}</p>
+            </article>
+          ))}
+        </div>
+        <a class="text-link more-link" href="#contact">The journey continues <span>↓</span></a>
+      </section>
+
+      <section id="ai" class="section section-dark">
+        <div class="container">
+          <div class="section-heading split-heading">
+            <div>
+              <p class="eyebrow">02 — AI & innovation</p>
+              <h2>Human by design.<br /><em>Intelligent by innovation.</em></h2>
+            </div>
+            <p>AI creates its greatest value when it reduces friction, improves understanding, and leaves people empowered to make the important decisions.</p>
+          </div>
+          <div class="focus-grid">
+            {focusAreas.map(([number, title, copy]) => (
+              <article class="focus-card">
+                <p class="focus-number">{number}</p>
+                <div class="focus-icon" aria-hidden="true"><span></span><span></span><span></span></div>
+                <h3>{title}</h3>
+                <p>{copy}</p>
+              </article>
+            ))}
+          </div>
+          <div class="ai-principle"><span>Principle</span><p>AI executes. <em>Humans decide.</em></p></div>
+        </div>
+      </section>
+
+      <section id="work" class="section container">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="eyebrow">03 — Work</p>
+            <h2>Different mediums.<br />One craft.</h2>
+          </div>
+          <p>Selected work will appear here as portfolio materials become available. For now, these cards show the stories this website will hold.</p>
+        </div>
+        <div class="work-grid">
+          {work.map(([tag, title, copy, placeholder], index) => (
+            <article class:list={['work-card', `work-${index + 1}`]}>
+              <div class="work-visual">
+                <span class="work-tag">{tag}</span>
+                <div class="placeholder-art" aria-hidden="true">
+                  {index === 0 && <><i></i><i></i><i></i><b></b></>}
+                  {index === 1 && <><i></i><i></i><i></i></>}
+                  {index === 2 && (
+                    <div class="youtube-portfolio-links">
+                      <a href="https://www.youtube.com/watch?v=sample1" target="_blank" rel="noopener noreferrer" class="yt-link">
+                        <span>▶</span> Animation Reel
+                      </a>
+                      <a href="https://www.youtube.com/watch?v=sample2" target="_blank" rel="noopener noreferrer" class="yt-link">
+                        <span>▶</span> Corporate Learning Story
+                      </a>
+                      <a href="https://www.youtube.com/watch?v=sample3" target="_blank" rel="noopener noreferrer" class="yt-link">
+                        <span>▶</span> Multimedia Showcase
+                      </a>
+                    </div>
+                  )}
+                  {index === 3 && <><i>▶</i><b>YUVA</b></>}
+                </div>
+                <small>{placeholder}</small>
+              </div>
+              <div class="work-copy">
+                <h3>{title}</h3>
+                <p>{copy}</p>
+                {index === 2 ? (
+                  <span class="multilink-indicator">Select a video above <b>↗</b></span>
+                ) : (
+                  <span>View Portfolio<b>↗</b></span>
+                )}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="people" class="section people-section">
+        <div class="container people-layout">
+          <div class="people-copy">
+            <p class="eyebrow">04 — People</p>
+            <h2>Technology scales products.<br /><em>People scale organisations.</em></h2>
+            <p>I care deeply about building environments where people are trusted, challenged, recognised, and able to grow.</p>
+            <a class="text-link" href="#contact">Start a conversation <span>↗</span></a>
+          </div>
+          <div class="stats-grid">
+            <div class="stat"><strong>100<span>+</span></strong><p>Candidate interviews</p></div>
+            <div class="stat"><strong>9.5<span>+</span></strong><p>Customer rating maintained for 3+ years</p></div>
+            <div class="stat stat-wide"><strong>19<span>+</span></strong><p>Years of continuous learning across creativity, products, technology and people.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="insights" class="section container insights-section">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="eyebrow">05 — Insights</p>
+            <h2>Thoughts in progress.</h2>
+          </div>
+          <p>Reflections on AI, design, product thinking, continuous learning, and building better ways of working.</p>
+        </div>
+        <div class="insights-empty">
+          <div class="spark" aria-hidden="true">✦</div>
+          <h3>Professional Highlights.</h3>
+          <p>Explore my articles, AI transformation insights, digital strategy, UX and project management experience on LinkedIn.</p>
+          <a class="button button-outline" href="https://www.linkedin.com/in/kumarshubhek" target="_blank" rel="noreferrer">Visit LinkedIn <span>↗</span></a>
+        </div>
+      </section>
+
+      <section id="contact" class="contact-section">
+        <div class="container contact-inner">
+          <p class="eyebrow">06 — Contact</p>
+          <h2>Let’s build<br /><em>something meaningful.</em></h2>
+          <p>Whether you’re exploring AI, shaping a product, improving an experience, or simply exchanging ideas, I’d be glad to connect.</p>
+          <a class="button button-light" href="mailto:hello@kumarshubhek.com">Start a conversation <span>↗</span></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer container">
+      <a class="brand" href="#top">KS<span>.</span></a>
+      <p>Still learning. Still building. Still curious.</p>
+      <p>© {new Date().getFullYear()} Kumar Shubhek</p>
+    </footer>
+  </body>
+</html>
+
+<style>
+  :global(*) { box-sizing: border-box; }
+  :global(html) { scroll-behavior: smooth; background: #0b0b0d; }
+  :global(body) { margin: 0; color: #f6f4ee; background: #0b0b0d; font-family: 'DM Sans', Arial, sans-serif; }
+  :global(a) { color: inherit; }
+  .container { width: min(1160px, calc(100% - 48px)); margin: 0 auto; }
+  .nav-wrap { position: absolute; z-index: 5; width: 100%; top: 0; }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 84px; border-bottom: 1px solid rgba(246,244,238,.12); }
+  .brand { color: #f6f4ee; font-size: 1.15rem; font-weight: 700; letter-spacing: -.08em; text-decoration: none; }
+  .brand span { color: #d8b45a; }
+  .nav-links { display: flex; gap: 1.4rem; }
+  .nav-links a, .nav-contact { color: #b6b4b0; font-size: .77rem; font-weight: 600; text-decoration: none; transition: color .2s ease; }
+  .nav-links a:hover, .nav-contact:hover { color: #f6f4ee; }
+  .nav-contact { color: #f6f4ee; }
+  .nav-contact span { color: #d8b45a; }
+  
+  /* Adjusted Hero Grid structure to complement typography heights exactly */
+  .hero { display: grid; min-height: 680px; padding: 160px 0 80px; grid-template-columns: 1.1fr .9fr; align-items: stretch; gap: 4rem; }
+  .hero-copy { display: flex; flex-direction: column; justify-content: center; }
+  
+  .eyebrow { display: flex; align-items: center; gap: .55rem; margin: 0 0 1.3rem; color: #d8b45a; font-family: 'DM Mono', monospace; font-size: .64rem; letter-spacing: .08em; text-transform: uppercase; }
+  .eyebrow span { display: block; width: 20px; height: 1px; background: currentColor; }
+  h1, h2, h3, p { margin-top: 0; }
+  h1, h2 { font-weight: 500; letter-spacing: -.07em; }
+  h1 { max-width: 810px; margin-bottom: 1.7rem; font-size: clamp(3.2rem, 5.5vw, 5.5rem); line-height: 1.02; }
+  h1 em, h2 em { color: #d8b45a; font-family: 'Playfair Display', Georgia, serif; font-weight: 500; }
+  .hero-intro { max-width: 440px; color: #a5a3a0; font-size: 1.07rem; line-height: 1.7; }
+  .hero-actions { display: flex; align-items: center; gap: 1.7rem; margin-top: 2rem; }
+  .button { display: inline-flex; align-items: center; gap: .9rem; padding: .92rem 1.15rem; border-radius: 999px; font-size: .78rem; font-weight: 700; text-decoration: none; transition: transform .2s ease, background .2s ease; }
+  .button:hover { transform: translateY(-3px); }
+  .button-primary { color: #0b0b0d; background: #f6f4ee; }
+  .button-primary span, .button-light span { color: #967520; font-size: 1rem; }
+  .button-outline { margin-top: 0; border: 1px solid rgba(246,244,238,.35); color: #f6f4ee; }
+  .text-link { color: #e5e2dc; font-size: .8rem; font-weight: 600; text-decoration: none; }
+  .text-link span { margin-left: .4rem; color: #d8b45a; }
+  
+  /* Pencil Art Container matching left height dynamically */
+  .pencil-art { position: relative; min-height: 100%; min-width: 100%; overflow: hidden; border: 1px solid rgba(246,244,238,.13); border-radius: 4px; background: radial-gradient(circle at 55% 45%, #18171c, #0d0d10 65%, #0b0b0d); display: flex; align-items: center; justify-content: center; }
+  .profile-photo { width: 100%; height: 100%; object-fit: cover; filter: grayscale(20%) contrast(105%); position: absolute; inset: 0; z-index: 1; opacity: 0.95; }
+  
+  .pencil-art p { position: absolute; bottom: 20px; left: 20px; margin: 0; color: #96938c; font-family: 'DM Mono', monospace; font-size: .52rem; letter-spacing: .1em; z-index: 3; }
+  .overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11,11,13,0.2) 0%, rgba(11,11,13,0.85) 90%); z-index: 2; }
+  .orbit { position: absolute; border: 1px solid rgba(216,180,90,.25); border-radius: 50%; z-index: 2; pointer-events: none; }
+  .orbit-one { width: 330px; height: 330px; top: 15%; left: 50%; transform: translateX(-50%) rotate(-22deg); }
+  .orbit-two { width: 230px; height: 230px; top: 25%; left: 50%; transform: translateX(-50%) rotate(57deg); border-color: rgba(246,244,238,.08); }
+  .line { position: absolute; width: 1px; height: 150%; left: 50%; top: -25%; background: linear-gradient(transparent, rgba(216,180,90,.6), transparent); z-index: 2; pointer-events: none; }
+  .line-one { transform: rotate(45deg); } .line-two { transform: rotate(-45deg); opacity: .3; }
+  
+  .statement-band { padding: 6.8rem 0; background: #efece5; color: #121214; }
+  .statement-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; }
+  .statement-grid .eyebrow { color: #98761f; }
+  .statement { max-width: 780px; margin: 0; font-size: clamp(2rem,4vw,4rem); font-weight: 500; letter-spacing: -.065em; line-height: 1.02; }
+  .statement em { color: #98761f; font-family: 'Playfair Display', Georgia, serif; }
+  .section { padding: 9rem 0; }
+  .section-dark { background: #131316; }
+  .section-heading { margin-bottom: 4rem; }
+  .split-heading { display: grid; grid-template-columns: 1.2fr .8fr; gap: 4rem; align-items: end; }
+  h2 { max-width: 700px; margin-bottom: 0; font-size: clamp(2.8rem,5.3vw,5rem); line-height: .96; }
+  .split-heading > p { max-width: 380px; margin: 0 0 .25rem; color: #a5a3a0; font-size: 1rem; line-height: 1.75; }
+  .timeline { display: grid; grid-template-columns: repeat(5,1fr); border-top: 1px solid rgba(246,244,238,.2); }
+  .timeline-item { position: relative; min-height: 275px; padding: 2rem 1.25rem 1rem 0; border-right: 1px solid rgba(246,244,238,.12); }
+  .timeline-item:not(:first-child) { padding-left: 1.25rem; }
+  .timeline-item:last-child { border: 0; }
+  .timeline-index { color: #777570; font-family: 'DM Mono', monospace; font-size: .6rem; }
+  .timeline-dot { position: absolute; top: -5px; width: 9px; height: 9px; border: 2px solid #0b0b0d; border-radius: 50%; background: #d8b45a; }
+  .timeline-year { margin: 3.4rem 0 .55rem; color: #d8b45a; font-family: 'DM Mono', monospace; font-size: .63rem; }
+  .timeline-item h3 { margin-bottom: .65rem; font-size: 1.1rem; letter-spacing: -.04em; }
+  .timeline-item > p:last-child { color: #979591; font-size: .83rem; line-height: 1.6; }
+  .timeline-item.current { background: rgba(216,180,90,.08); }
+  .more-link { display: inline-block; margin-top: 1.3rem; }
+  .focus-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: rgba(246,244,238,.12); border: 1px solid rgba(246,244,238,.12); }
+  .focus-card { min-height: 330px; padding: 1.8rem; background: #131316; }
+  .focus-number { color: #777570; font-family: 'DM Mono', monospace; font-size: .6rem; }
+  .focus-icon { display: flex; align-items: end; gap: 5px; height: 92px; margin: 1.6rem 0; }
+  .focus-icon span { width: 20px; background: #d8b45a; } .focus-icon span:nth-child(1){height: 33%;}.focus-icon span:nth-child(2){height: 75%; opacity:.7;}.focus-icon span:nth-child(3){height: 48%; opacity:.35;}
+  .focus-card h3 { margin-bottom: .7rem; font-size: 1.25rem; letter-spacing: -.04em; }
+  .focus-card > p:last-child { max-width: 280px; color: #9f9d99; font-size: .85rem; line-height: 1.6; }
+  .ai-principle { display: flex; justify-content: space-between; align-items: end; margin-top: 5rem; padding-top: 1.2rem; border-top: 1px solid rgba(246,244,238,.2); }
+  .ai-principle span { color: #d8b45a; font-family: 'DM Mono', monospace; font-size: .62rem; text-transform: uppercase; }
+  .ai-principle p { margin: 0; font-size: clamp(1.65rem,3vw,3rem); letter-spacing: -.06em; } .ai-principle em { color: #d8b45a; font-family: 'Playfair Display', Georgia, serif; }
+  
+  .work-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1.3rem; }
+  .work-card { background: #151518; overflow: hidden; }
+  .work-visual { position: relative; height: 310px; padding: 1.1rem; overflow: hidden; background: #1e1d20; }
+  .work-1 .work-visual { background: #1e2026; }.work-2 .work-visual { background: #e8e2d7; }.work-3 .work-visual { background: #1a231f; }.work-4 .work-visual { background: #392b25; }
+  .work-tag, .work-visual small { position: relative; z-index: 2; font-family: 'DM Mono', monospace; font-size: .58rem; letter-spacing: .08em; text-transform: uppercase; }.work-tag{color:#d8b45a}.work-visual small{position:absolute;bottom:1.1rem;left:1.1rem;color:#aaa7a1}.work-2 .work-visual small{color:#615e58}
+  
+  .placeholder-art { position: absolute; inset: 0; display: grid; place-items: center; z-index: 1; }
+  
+  /* Styled YouTube Cluster links inside Work Card 3 */
+  .youtube-portfolio-links { display: flex; flex-direction: column; gap: 0.75rem; width: 80%; max-width: 260px; pointer-events: auto; }
+  .yt-link { display: flex; align-items: center; gap: 0.6rem; padding: 0.7rem 1rem; background: rgba(11, 11, 13, 0.7); border: 1px solid rgba(181, 199, 165, 0.3); border-radius: 4px; color: #dce8d0; text-decoration: none; font-size: 0.78rem; font-weight: 500; transition: background 0.2s, border-color 0.2s, transform 0.2s; }
+  .yt-link span { color: #d8b45a; font-size: 0.65rem; transition: transform 0.2s; }
+  .yt-link:hover { background: rgba(26, 35, 31, 0.95); border-color: #b5c7a5; transform: translateX(4px); }
+  .yt-link:hover span { transform: scale(1.2); }
+  
+  .work-1 .placeholder-art i { position:absolute; width:120px; height:95px; border:1px solid rgba(216,180,90,.7); }.work-1 .placeholder-art i:nth-child(1){transform:translate(-80px,-30px)}.work-1 .placeholder-art i:nth-child(2){transform:translate(35px,26px)}.work-1 .placeholder-art i:nth-child(3){width:70px;height:170px;transform:rotate(42deg);background:linear-gradient(#d8b45a,#80641b)}.work-1 .placeholder-art b{position:absolute;width:180px;height:1px;background:#d8b45a;transform:rotate(-22deg)}
+  .work-2 .placeholder-art i { position:absolute; width:230px; height:145px; border:7px solid #262528; background:#f7f5f0; box-shadow: inset 0 0 0 14px #d8b45a; }.work-2 .placeholder-art i:nth-child(2){width:75px;height:120px;transform:translate(155px,65px);box-shadow:none;background:#262528}.work-2 .placeholder-art i:nth-child(3){width:75px;height:12px;transform:translate(-50px,0);border:0;background:#d8b45a}
+  .work-4 .placeholder-art i{display:grid;place-items:center;width:82px;height:82px;border-radius:50%;background:#e65b95;color:#fff;font-style:normal}.work-4 .placeholder-art b{position:absolute;transform:translateY(105px);color:#f0d1bd;font-size:2rem;letter-spacing:.12em}
+  
+  .work-copy { padding: 1.45rem; }.work-copy h3 { margin-bottom:.6rem;font-size:1.4rem;letter-spacing:-.05em}.work-copy p{max-width:380px;color:#a5a3a0;font-size:.86rem;line-height:1.6}.work-copy span, .work-copy .multilink-indicator { display:block; margin-top:1.5rem; color:#d8b45a; font-family:'DM Mono',monospace; font-size:.6rem; text-transform:uppercase}.work-copy b{margin-left:.4rem}
+  .work-copy .multilink-indicator { color: #85827d; }
+  
+  .people-section { background: #e4dfd5; color: #141416; }.people-layout{display:grid;grid-template-columns:1fr 1fr;gap:8rem;align-items:center}.people-copy h2{margin-bottom:1.5rem}.people-copy .eyebrow{color:#98761f}.people-copy>p:not(.eyebrow){max-width:470px;color:#66615b;line-height:1.75}.people-copy .text-link{display:inline-block;margin-top:1.2rem;color:#141416}.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#c7c0b4}.stat{min-height:200px;padding:1.6rem;background:#e4dfd5}.stat strong{display:block;color:#151518;font-size:clamp(3rem,5vw,5rem);letter-spacing:-.1em;line-height:.9}.stat strong span{color:#98761f}.stat p{margin:1.5rem 0 0;color:#6b655d;font-size:.75rem;line-height:1.5}.stat-wide{grid-column:span 2;min-height:155px}.stat-wide p{max-width:330px}
+  .insights-empty { display:flex;min-height:320px;flex-direction:column;align-items:center;justify-content:center;border:1px dashed rgba(246,244,238,.25);text-align:center}.spark{color:#d8b45a;font-size:1.5rem}.insights-empty h3{margin:1rem 0 .6rem;font-size:1.4rem;letter-spacing:-.05em}.insights-empty p{margin:0;color:#9f9d99;font-size:.86rem}
+  .contact-section { padding: 10rem 0; background: #d8b45a; color:#151518; }.contact-inner{text-align:center}.contact-inner .eyebrow{justify-content:center;color:#5f4810}.contact-inner h2{margin:0 auto 1.7rem;font-size:clamp(3.5rem,7vw,7rem)}.contact-inner h2 em{color:#5f4810}.contact-inner>p:not(.eyebrow){max-width:560px;margin:0 auto;color:#51401b;line-height:1.7}.button-light{margin-top:2rem;background:#151518;color:#f6f4ee}
+  .footer { display:flex;align-items:center;justify-content:space-between;padding:2rem 0;color:#85827d;font-size:.7rem }.footer p{margin:0}.footer p:nth-child(2){font-family:'Playfair Display',serif;font-size:1rem;color:#b3afa9}
+  
+  @media (max-width: 780px) { .container{width:min(100% - 36px,1160px)}.nav{height:70px}.nav-links{display:none}.nav-contact{font-size:.7rem}.hero{min-height:auto;padding:140px 0 70px;grid-template-columns:1fr;gap:3rem}h1{font-size:clamp(3.3rem,13vw,5.8rem)}.pencil-art{ position:relative; display:flex; align-items:center; justify-content:center; height:480px; overflow:hidden; }.statement-band{padding:4.5rem 0}.statement-grid,.split-heading,.people-layout{grid-template-columns:1fr;gap:1.5rem}.section{padding:5.8rem 0}.timeline{grid-template-columns:1fr;border-left:1px solid rgba(246,244,238,.15);border-top:0;margin-left:.3rem}.timeline-item,.timeline-item:not(:first-child){min-height:auto;padding:1.2rem 1.3rem 1.2rem 1.8rem;border-right:0;border-bottom:1px solid rgba(246,244,238,.12)}.timeline-dot{top:50%;left:-5px}.timeline-year{margin:0 0 .4rem}.timeline-index{display:none}.focus-grid,.work-grid{grid-template-columns:1fr}.ai-principle{display:block}.ai-principle p{margin-top:1rem}.people-layout{gap:3.5rem}.contact-section{padding:6rem 0}.footer{align-items:flex-start;flex-direction:column;gap:1rem}.footer p:nth-child(2){order:-1}.hero-actions{align-items:flex-start;flex-direction:column;gap:1rem} }
+</style>

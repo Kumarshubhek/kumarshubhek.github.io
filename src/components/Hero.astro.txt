@@ -1,0 +1,266 @@
+---
+const profile = {
+  name: "Shubhek Kumar",
+  designation: "AI Transformation & Digital Delivery Leader",
+  subtitle:
+    "Senior Project Manager | PMO | Certified Scrum Master | UX/UI | AI Workflow Automation",
+
+  email: "kumarshubhek@gmail.com",
+
+  linkedin: "https://www.linkedin.com/in/kumarshubhek/",
+
+  resume: "/resume/Shubhek_Kumar_Resume.pdf",
+
+  coverletter: "/resume/Shubhek_Kumar_Cover_Letter.pdf",
+
+  photo: "/images/shubhek-profile.jpg",
+};
+---
+
+<section class="hero">
+
+    <div class="hero-left">
+
+        <div class="profile-photo">
+
+            <img
+                src={profile.photo}
+                alt={profile.name}
+            />
+
+        </div>
+
+    </div>
+
+    <div class="hero-right">
+
+        <span class="tag">
+
+            AI • PMO • Digital Transformation
+
+        </span>
+
+        <h1>
+
+            {profile.name}
+
+        </h1>
+
+        <h2>
+
+            {profile.designation}
+
+        </h2>
+
+        <p>
+
+            {profile.subtitle}
+
+        </p>
+
+        <div class="buttons">
+
+            <a
+                class="btn primary"
+                href={profile.resume}
+                download>
+
+                Download Resume
+
+            </a>
+
+            <a
+                class="btn secondary"
+                href={profile.coverletter}
+                download>
+
+                Cover Letter
+
+            </a>
+
+            <a
+                class="btn outline"
+                href={profile.linkedin}
+                target="_blank">
+
+                LinkedIn
+
+            </a>
+
+            <a
+                class="btn outline"
+                href={`mailto:${profile.email}`}>
+
+                Contact Me
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+
+.hero{
+
+display:grid;
+
+grid-template-columns:320px 1fr;
+
+gap:60px;
+
+align-items:center;
+
+padding:80px 0;
+
+}
+
+.profile-photo img{
+
+width:300px;
+
+height:300px;
+
+border-radius:50%;
+
+object-fit:cover;
+
+border:6px solid #3b82f6;
+
+box-shadow:0 0 40px rgba(59,130,246,.4);
+
+}
+
+.tag{
+
+display:inline-block;
+
+background:#2563eb;
+
+color:white;
+
+padding:8px 18px;
+
+border-radius:50px;
+
+font-size:14px;
+
+margin-bottom:20px;
+
+}
+
+h1{
+
+font-size:56px;
+
+margin-bottom:10px;
+
+}
+
+h2{
+
+font-size:28px;
+
+color:#3b82f6;
+
+margin-bottom:25px;
+
+}
+
+p{
+
+font-size:20px;
+
+line-height:1.7;
+
+margin-bottom:35px;
+
+}
+
+.buttons{
+
+display:flex;
+
+gap:15px;
+
+flex-wrap:wrap;
+
+}
+
+.btn{
+
+padding:14px 28px;
+
+border-radius:8px;
+
+text-decoration:none;
+
+font-weight:700;
+
+transition:.3s;
+
+}
+
+.primary{
+
+background:#2563eb;
+
+color:white;
+
+}
+
+.secondary{
+
+background:#0f172a;
+
+color:white;
+
+}
+
+.outline{
+
+border:2px solid #2563eb;
+
+color:#2563eb;
+
+}
+
+.btn:hover{
+
+transform:translateY(-3px);
+
+}
+
+@media(max-width:900px){
+
+.hero{
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+}
+
+.profile-photo{
+
+margin:auto;
+
+}
+
+.buttons{
+
+justify-content:center;
+
+}
+
+h1{
+
+font-size:40px;
+
+}
+
+}
+
+</style>

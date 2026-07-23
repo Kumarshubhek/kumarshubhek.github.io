@@ -1,0 +1,116 @@
+---
+const videos = [
+  {
+    title: "Animation Demo 1",
+    url: "https://www.youtube.com/embed/0NmTmCAUKhU"
+  },
+  {
+    title: "Animation Demo 2",
+    url: "https://www.youtube.com/embed/rwwQPtTUqD4"
+  },
+  {
+    title: "Animation Demo 3",
+    url: "https://www.youtube.com/embed/z02mF0LdvCE"
+  }
+];
+---
+
+<section class="portfolio">
+
+  <div class="section-title">
+    <h2>Portfolio Showcase</h2>
+    <p>Animation | Digital Learning | UI/UX | Dashboard Design</p>
+  </div>
+
+  <div class="dashboard-card">
+    <img
+      src="/images/dashboard-ui.png"
+      alt="Dashboard Preview"
+    />
+  </div>
+
+  <h3 class="video-heading">Featured Videos</h3>
+
+  <div class="video-grid">
+
+    {
+      videos.map((video) => (
+        <div class="video-card">
+          <iframe
+            src={video.url}
+            title={video.title}
+            loading="lazy"
+            allowfullscreen
+          ></iframe>
+
+          <h4>{video.title}</h4>
+        </div>
+      ))
+    }
+
+  </div>
+
+</section>
+
+<style>
+
+.portfolio{
+padding:90px 0;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:50px;
+}
+
+.section-title h2{
+font-size:42px;
+margin-bottom:10px;
+}
+
+.section-title p{
+font-size:18px;
+color:#94a3b8;
+}
+
+.dashboard-card{
+margin-bottom:60px;
+}
+
+.dashboard-card img{
+width:100%;
+border-radius:18px;
+box-shadow:0 20px 40px rgba(0,0,0,.25);
+}
+
+.video-heading{
+margin-bottom:25px;
+font-size:28px;
+text-align:center;
+}
+
+.video-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:30px;
+}
+
+.video-card{
+background:#111827;
+padding:20px;
+border-radius:16px;
+}
+
+.video-card iframe{
+width:100%;
+aspect-ratio:16/9;
+border:none;
+border-radius:12px;
+}
+
+.video-card h4{
+margin-top:15px;
+text-align:center;
+}
+
+</style>

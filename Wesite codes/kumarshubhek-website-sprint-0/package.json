@@ -1,0 +1,19 @@
+{
+  "name": "kumarshubhek-website",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Personal website for Kumar Shubhek, built with Astro.",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "astro": "^5.12.8",
+    "typescript": "^5.8.3"
+  }
+}
