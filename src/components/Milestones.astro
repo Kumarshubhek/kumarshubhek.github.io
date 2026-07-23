@@ -520,110 +520,90 @@ const milestones = [
     color: #d8b45a;
   }
 
-  /* Mobile Responsive Fixes: Left-aligned vertical layout preventing horizontal scrollbar */
+  /* Mobile screen: explicitly retain side-by-side layout (Years on left, Card on right) without horizontal page overflow */
   @media (max-width: 900px) {
     .curved-timeline-wrapper {
-      padding: 1rem 0.5rem;
+      padding: 1rem 0;
+      overflow-x: hidden;
     }
 
     .timeline-grid-container {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
+      grid-template-columns: 110px minmax(0, 1fr);
+      gap: 0.75rem;
+      align-items: stretch;
       max-width: 100%;
+      padding: 0 0.5rem;
     }
 
     .arc-sidebar {
-      height: auto !important;
-      width: 100% !important;
-      min-height: auto;
-      display: block;
+      height: 480px;
+      width: 110px;
     }
 
     .arc-track-container {
-      position: relative !important;
-      inset: auto !important;
-      width: 100% !important;
-      height: auto !important;
+      width: 110px;
     }
 
-    .curved-svg-line, 
-    .scale-ticker-bar { 
-      display: none !important; 
+    .curved-svg-line {
+      display: block;
+    }
+
+    .scale-ticker-bar {
+      left: 0px;
+      width: 16px;
     }
 
     .timeline-nodes-list {
-      position: relative !important;
-      inset: auto !important;
-      display: flex !important;
-      flex-direction: column !important;
-      gap: 0.6rem !important;
-      overflow-x: visible !important;
-      padding: 0 !important;
+      flex-direction: column;
+      padding: 6px 0;
+      gap: 0;
+      overflow-x: visible;
     }
 
     .timeline-node-btn {
-      flex-direction: row !important;
-      align-items: center !important;
-      gap: 12px !important;
-      transform: none !important;
-      width: 100%;
-      padding: 0.25rem 0;
-    }
-
-    .node-dot {
-      width: 10px !important;
-      height: 10px !important;
-      background: #131316;
-      border: 2px solid rgba(216, 180, 90, 0.6);
-      flex-shrink: 0;
-    }
-
-    .timeline-node-btn.active .node-dot {
-      width: 14px !important;
-      height: 14px !important;
-      background: #d8b45a;
-      border-color: #f6f4ee;
+      flex-direction: row;
+      gap: 6px;
     }
 
     .node-year-text {
-      font-size: 0.85rem !important;
-      color: #9c9993;
+      font-size: 0.65rem;
     }
 
-    .timeline-node-btn.active .node-year-text {
-      color: #d8b45a;
-      font-weight: 700;
-    }
-
-    .timeline-viewport { 
-      min-height: 440px !important; 
+    .timeline-viewport {
+      min-height: 460px;
     }
 
     .milestone-card {
-      padding: 1.25rem !important;
+      padding: 1.1rem;
     }
 
     .card-giant-watermark {
-      right: 1rem !important;
-      top: 0.75rem !important;
+      right: 0.75rem;
+      top: 0.5rem;
     }
 
     .card-watermark-year {
-      font-size: 4rem !important;
+      font-size: 3.5rem;
     }
 
     .card-top-info h3 {
-      font-size: 1.2rem !important;
+      font-size: 1.1rem;
+      line-height: 1.2;
     }
 
-    .card-content-split { 
-      grid-template-columns: 1fr !important;
-      gap: 1rem !important;
-      padding-top: 0.85rem !important;
+    .card-top-info h4 {
+      font-size: 0.8rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .card-content-split {
+      grid-template-columns: 1fr;
+      gap: 0.85rem;
+      padding-top: 0.85rem;
     }
 
     .stats-table-box {
-      padding: 0.75rem !important;
+      padding: 0.75rem;
     }
   }
 </style>
