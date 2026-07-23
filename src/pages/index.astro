@@ -1,53 +1,12 @@
 ---
+import Milestones from '../components/Milestones.astro';
+
 const navItems = [
   ['Journey', '#journey'],
   ['AI', '#ai'],
   ['Work', '#work'],
   ['People', '#people'],
   ['Insights', '#insights'],
-];
-
-const milestones = [
-  [
-    'June 2006 - Nov 2006', 
-    'Pencil Animator & Storyteller, Brepo Systems PVT. LTD.', 
-    'Crafted traditional hand-drawn frames and baseline narratives, establishing a core creative foundation.'
-  ],
-  [
-    'Nov 2006 - Apr 2010',
-    'Sr. Animator, Caltoonz, Dept of Education | Delhi', 
-    'Translated classic concepts into complex digital frames, scaling visual communication for educational programs.'
-  ],
-  [
-    'May 2010 - Sep 2010', 
-    'Team Lead, Sterco Digitex Pvt Limited', 
-    'Guided creative assets and multimedia delivery schedules to transform abstract ideas into rich consumer media.'
-  ],
-  [
-    'Sep 2010 - Dec 2010', 
-    'Team Lead, Espire infolabs', 
-    'Steered cross-functional designers to synthesize structural interface layouts and interactive web solutions.'
-  ],
-  [
-    'Dec 2010 - Feb 2014', 
-    'UX Designer and eLearning, Magic Software Pvt Ltd', 
-    'Architected custom digital frameworks and cognitive workflows to simplify how users absorb platform data.'
-  ],
-  [
-    'Feb 2014 - Aug 2016', 
-    'Sr. Consultant (UX & eLearning), Accenture', 
-    'Spearheaded end-to-end product strategies, user research systems, and global applications scaling enterprise value.'
-  ],
-  [
-    'Aug 2016 - May 2023', 
-    'Project Manager, Genpact', 
-    'Managed complex enterprise transformation delivery, aligning operational execution, agile teams, and program roadmaps.'
-  ],
-  [
-    'Today', 
-    'Senior Project Manager | AI Transformation, Genpact', 
-    'Leading human-plus-AI workflows, operational alignment, and responsible intelligence systems.'
-  ]
 ];
 
 const focusAreas = [
@@ -141,6 +100,7 @@ const work = [
         </div>
       </section>
 
+      <!-- Journey Section with Interactive Curved Arc Dialer Component -->
       <section id="journey" class="section container">
         <div class="section-heading split-heading">
           <div>
@@ -149,18 +109,12 @@ const work = [
           </div>
           <p>From animation to AI, the journey has never been a straight line. Each transition has made the next one possible.</p>
         </div>
-        <div class="timeline">
-          {milestones.map(([year, title, copy], index) => (
-            <article class:list={['timeline-item', { current: index === milestones.length - 1 }]}>
-              <span class="timeline-index">0{index + 1}</span>
-              <div class="timeline-dot"></div>
-              <p class="timeline-year">{year}</p>
-              <h3>{title}</h3>
-              <p>{copy}</p>
-            </article>
-          ))}
+
+        <Milestones />
+        
+        <div style="text-align: center; margin-top: 3rem;">
+          <a class="text-link more-link" href="#contact">The journey continues <span>↓</span></a>
         </div>
-        <a class="text-link more-link" href="#contact">The journey continues <span>↓</span></a>
       </section>
 
       <section id="ai" class="section section-dark">
@@ -200,13 +154,12 @@ const work = [
               <div class="work-visual">
                 <span class="work-tag">{tag}</span>
                 <div class="placeholder-art" aria-hidden="true">
-					{index === 0 && <img src="/images/dashboard-ui.png" alt="Executive Dashboard UI Screenshot" class="work-dashboard-img" />}
-					{index === 1 && <img src="/images/UI-UX.png" alt="UI-UX Banner" class="UI-UX-img" />}
+                  {index === 0 && <img src="/images/dashboard-ui.png" alt="Executive Dashboard UI Screenshot" class="work-dashboard-img" />}
+                  {index === 1 && <img src="/images/UI-UX.png" alt="UI-UX Banner" class="UI-UX-img" />}
                   
-                  {/* Updated YouTube Embedded Elements Cluster */}
                   {index === 2 && (
                     <div class="youtube-player-cluster">
-                      <div class="video-frame-wrapper">UI / UX Design
+                      <div class="video-frame-wrapper">
                         <iframe width="100%" height="100%" src="https://www.youtube.com/embed/0NmTmCAUKhU" title="Animation Portfolio View 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                       </div>
                       <div class="video-frame-wrapper">
@@ -295,13 +248,12 @@ const work = [
   .nav-contact span { color: #d8b45a; }
   
   .hero { 
-  display: grid; 
-  padding: 160px 0 80px; /* Increased padding to give breathing room below the fixed header */
-  grid-template-columns: 1.1fr .9fr; 
-  align-items: center; 
-  gap: 4rem; 
-  /* Removed height constraints and overflow: hidden to prevent chopping off elements */
-}
+    display: grid; 
+    padding: 160px 0 80px; 
+    grid-template-columns: 1.1fr .9fr; 
+    align-items: center; 
+    gap: 4rem; 
+  }
   .hero-copy { padding-right: 20px; }
   .eyebrow { display: flex; align-items: center; gap: .55rem; margin: 0 0 1.3rem; color: #d8b45a; font-family: 'DM Mono', monospace; font-size: .64rem; letter-spacing: .08em; text-transform: uppercase; }
   .eyebrow span { display: block; width: 20px; height: 1px; background: currentColor; }
@@ -329,7 +281,6 @@ const work = [
   }
   .hero-intro { max-width: 440px; color: #a5a3a0; font-size: 1.02rem; line-height: 1.65; }
   
-  /* Fixed to display in a single horizontal row with zero vertical stack */
   .hero-actions { display: flex; flex-direction: row; flex-wrap: nowrap; align-items: center; gap: 1rem; margin-top: 2rem; width: max-content; }
   .button { display: inline-flex; align-items: center; gap: .9rem; padding: .92rem 1.15rem; border-radius: 999px; font-size: .78rem; font-weight: 700; text-decoration: none; white-space: nowrap; transition: transform .2s ease, background .2s ease; }
   .button:hover { transform: translateY(-3px); }
@@ -339,23 +290,23 @@ const work = [
   .text-link span { margin-left: .4rem; color: #d8b45a; }
   
   .pencil-art { 
-  position: relative; 
-  height: 580px; /* Locked height so it scales gracefully */
-  width: 100%; 
-  border: 1px solid rgba(246,244,238,.13); 
-  border-radius: 30px; /* Smooth rounded corners for the frame */
-  background: #0b0b0d; 
-  overflow: hidden; /* Keeps inner image masked nicely */
-}
+    position: relative; 
+    height: 580px; 
+    width: 100%; 
+    border: 1px solid rgba(246,244,238,.13); 
+    border-radius: 30px; 
+    background: #0b0b0d; 
+    overflow: hidden; 
+  }
 
-.profile-photo { 
-  width: 100%; 
-  height: 100%; 
-  object-fit: cover; 
-  object-position: center top; 
-  display: block;
-  border-radius: 16px; /* Matches the parent frame border radius */
-}
+  .profile-photo { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    object-position: center top; 
+    display: block;
+    border-radius: 16px; 
+  }
   .pencil-art p { position: absolute; bottom: 20px; left: 20px; margin: 0; color: #96938c; font-family: 'DM Mono', monospace; font-size: .52rem; letter-spacing: .1em; z-index: 3; }
   .overlay { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, rgba(11,11,13,0.85) 95%); z-index: 2; }
   .orbit { position: absolute; border: 1px solid rgba(216,180,90,.2); border-radius: 50%; z-index: 2; }
@@ -375,17 +326,6 @@ const work = [
   .split-heading { display: grid; grid-template-columns: 1.2fr .8fr; gap: 4rem; align-items: end; }
   h2 { max-width: 700px; margin-bottom: 0; font-size: clamp(2.8rem,5.3vw,5rem); line-height: .96; }
   .split-heading > p { max-width: 380px; margin: 0 0 .25rem; color: #a5a3a0; font-size: 1rem; line-height: 1.75; }
-  .timeline { display: grid; grid-template-columns: repeat(5,1fr); border-top: 1px solid rgba(246,244,238,.2); }
-  .timeline-item { position: relative; min-height: 275px; padding: 2rem 1.25rem 1rem 0; border-right: 1px solid rgba(246,244,238,.12); }
-  .timeline-item:not(:first-child) { padding-left: 1.25rem; }
-  .timeline-item:last-child { border: 0; }
-  .timeline-index { color: #777570; font-family: 'DM Mono', monospace; font-size: .6rem; }
-  .timeline-dot { position: absolute; top: -5px; width: 9px; height: 9px; border: 2px solid #0b0b0d; border-radius: 50%; background: #d8b45a; }
-  .timeline-year { margin: 3.4rem 0 .55rem; color: #d8b45a; font-family: 'DM Mono', monospace; font-size: .63rem; }
-  .timeline-item h3 { margin-bottom: .65rem; font-size: 1.1rem; letter-spacing: -.04em; }
-  .timeline-item > p:last-child { color: #979591; font-size: .83rem; line-height: 1.6; }
-  .timeline-item.current { background: rgba(216,180,90,.08); }
-  .more-link { display: inline-block; margin-top: 1.3rem; }
   .focus-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: rgba(246,244,238,.12); border: 1px solid rgba(246,244,238,.12); }
   .focus-card { min-height: 330px; padding: 1.8rem; background: #131316; }
   .focus-number { color: #777570; font-family: 'DM Mono', monospace; font-size: .6rem; }
@@ -401,20 +341,8 @@ const work = [
   .work-visual { position: relative; height: 310px; padding: 1.1rem; overflow: hidden; background: #1e1d20; }
   .work-1 .work-visual { background: #1e2026; }.work-2 .work-visual { background: #1e2026; }.work-3 .work-visual { background: #27332d; }.work-4 .work-visual { background: #392b25; }
   .work-tag, .work-visual small { position: relative; z-index: 2; font-family: 'DM Mono', monospace; font-size: .58rem; letter-spacing: .08em; text-transform: uppercase; }.work-tag{color:#d8b45a} .work-visual small{position:absolute;bottom:1.1rem;left:1.1rem;color:#aaa7a1}.work-2 .work-visual small{color:#615e58}
-  .work-dashboard-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  display: block;}
-  
-  .UI-UX-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  display: block;}
-
+  .work-dashboard-img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+  .UI-UX-img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
   .youtube-player-cluster { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; width: 92%; height: 75%; pointer-events: auto; }
   .video-frame-wrapper { width: 100%; height: 110px; border-radius: 4px; overflow: hidden; border: 1px solid rgba(246,244,238,.15); background: #000; }
   
@@ -427,5 +355,25 @@ const work = [
   .contact-section { padding: 10rem 0; background: #d8b45a; color:#151518; }.contact-inner{text-align:center}.contact-inner .eyebrow{justify-content:center;color:#5f4810}.contact-inner h2{margin:0 auto 1.7rem;font-size:clamp(3.5rem,7vw,7rem)}.contact-inner h2 em{color:#5f4810}.contact-inner>p:not(.eyebrow){max-width:560px;margin:0 auto;color:#51401b;line-height:1.7}.button-light{margin-top:2rem;background:#151518;color:#f6f4ee}
   .footer { display:flex;align-items:center;justify-content:space-between;padding:2rem 0;color:#85827d;font-size:.7rem }.footer p{margin:0}.footer p:nth-child(2){font-family:'Playfair Display',serif;font-size:1rem;color:#b3afa9}
   
-  @media (max-width: 780px) { .container{width:min(100% - 36px,1160px)}.nav{height:70px}.nav-links{display:none}.nav-contact{font-size:.7rem}.hero{height:auto;max-height:none;min-height:auto;padding:140px 0 70px;grid-template-columns:1fr;gap:3rem}h1{font-size:clamp(3.3rem,13vw,5.8rem)}.pencil-art{position:relative;display:flex;align-items:flex-end;justify-content:center;height:560px;overflow:visible;}.statement-band{padding:4.5rem 0}.statement-grid,.split-heading,.people-layout{grid-template-columns:1fr;gap:1.5rem}.section{padding:5.8rem 0}.timeline{grid-template-columns:1fr;border-left:1px solid rgba(246,244,238,.15);border-top:0;margin-left:.3rem}.timeline-item,.timeline-item:not(:first-child){min-height:auto;padding:1.2rem 1.3rem 1.2rem 1.8rem;border-right:0;border-bottom:1px solid rgba(246,244,238,.12)}.timeline-dot{top:50%;left:-5px}.timeline-year{margin:0 0 .4rem}.timeline-index{display:none}.focus-grid,.work-grid{grid-template-columns:1fr}.ai-principle{display:block}.ai-principle p{margin-top:1rem}.people-layout{gap:3.5rem}.contact-section{padding:6rem 0}.footer{align-items:flex-start;flex-direction:column;gap:1rem}.footer p:nth-child(2){order:-1}.hero-actions{width:100%;flex-wrap:wrap;} .youtube-player-cluster { grid-template-columns: 1fr; height: auto; } }
+  @media (max-width: 780px) { 
+    .container{width:min(100% - 36px,1160px)}
+    .nav{height:70px}
+    .nav-links{display:none}
+    .nav-contact{font-size:.7rem}
+    .hero{height:auto;max-height:none;min-height:auto;padding:140px 0 70px;grid-template-columns:1fr;gap:3rem}
+    h1{font-size:clamp(3.3rem,13vw,5.8rem)}
+    .pencil-art{position:relative;display:flex;align-items:flex-end;justify-content:center;height:560px;overflow:visible;}
+    .statement-band{padding:4.5rem 0}
+    .statement-grid,.split-heading,.people-layout{grid-template-columns:1fr;gap:1.5rem}
+    .section{padding:5.8rem 0}
+    .focus-grid,.work-grid{grid-template-columns:1fr}
+    .ai-principle{display:block}
+    .ai-principle p{margin-top:1rem}
+    .people-layout{gap:3.5rem}
+    .contact-section{padding:6rem 0}
+    .footer{align-items:flex-start;flex-direction:column;gap:1rem}
+    .footer p:nth-child(2){order:-1}
+    .hero-actions{width:100%;flex-wrap:wrap;} 
+    .youtube-player-cluster { grid-template-columns: 1fr; height: auto; } 
+  }
 </style>

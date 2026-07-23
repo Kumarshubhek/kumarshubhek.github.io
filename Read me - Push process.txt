@@ -1,0 +1,13 @@
+Localhost: http://localhost:4321/
+
+D:
+cd D:\Shubhek\Website\Projects
+npm run dev
+
+Update online:
+
+git add .
+git commit -m "Update website content"
+git push origin main
+
+NEVER USE - git push origin main --force

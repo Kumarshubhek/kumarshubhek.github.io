@@ -1,0 +1,553 @@
+---
+// src/components/Milestones.astro
+const milestones = [
+  {
+    yearText: "2023",
+    period: "MAY 2023 - PRESENT",
+    role: "PMO - Senior Project Manager",
+    company: "GENPACT | Gurgaon, India",
+    stats: [
+      { label: "Client Governments", value: "71" },
+      { label: "Application Centres", value: "4,250" },
+      { label: "Countries of Operation", value: "169" },
+      { label: "Applications Processed*", value: "557.09m" },
+      { label: "Employees", value: "17,897" }
+    ],
+    highlights: [
+      "Built and scaled the GrowthOps iPith team, leading advanced AI adoption workflows.",
+      "Directed end-to-end delivery of complex enterprise UX/UI projects and governance."
+    ]
+  },
+  {
+    yearText: "2016",
+    period: "AUG 2016 - MAY 2023",
+    role: "Project Manager",
+    company: "GENPACT | Gurgaon, India",
+    stats: [
+      { label: "Client Governments", value: "68" },
+      { label: "Application Centres", value: "3,900" },
+      { label: "Countries of Operation", value: "145" },
+      { label: "Applications Processed*", value: "480.20m" },
+      { label: "Employees", value: "15,400" }
+    ],
+    highlights: [
+      "Directed strategic design governance and global cybersecurity awareness campaigns.",
+      "Delivered gamified enterprise learning solutions and scaled the InfoSec Champions Program."
+    ]
+  },
+  {
+    yearText: "2014",
+    period: "FEB 2014 - AUG 2016",
+    role: "UX Lead (on third party payroll)",
+    company: "Accenture | Gurgaon, India",
+    stats: [
+      { label: "Design System Modules", value: "45+" },
+      { label: "Global Stakeholders", value: "20+" },
+      { label: "Platforms Delivered", value: "12" }
+    ],
+    highlights: [
+      "Worked as Design Architect Consultant managing cross-functional UX/UI architecture.",
+      "Spearheaded interactive product prototyping and digital learning transformation initiatives."
+    ]
+  },
+  {
+    yearText: "2010",
+    period: "DEC 2010 - FEB 2014",
+    role: "UX Designer",
+    company: "Magic Software Pvt Ltd | Noida, India",
+    stats: [
+      { label: "Products Designed", value: "28" },
+      { label: "Platforms", value: "Web & iPad" },
+      { label: "Client Satisfaction", value: "98%" }
+    ],
+    highlights: [
+      "Designed immersive UX/UI solutions, touch-enabled prototypes, and iPad applications.",
+      "Crafted intuitive cross-platform interactive interfaces for global publishing partners."
+    ]
+  },
+  {
+    yearText: "2010",
+    period: "SEP 2010 - DEC 2010",
+    role: "Team Lead",
+    company: "Espire infolabs | Delhi, India",
+    stats: [
+      { label: "Team Members", value: "15" },
+      { label: "Projects Delivered", value: "6" }
+    ],
+    highlights: [
+      "Led end-to-end eLearning development and multimedia production pipelines.",
+      "Coordinated cross-media team deliverables for large-scale enterprise communication requirements."
+    ]
+  },
+  {
+    yearText: "2010",
+    period: "MAY 2010 - SEP 2010",
+    role: "Team Lead",
+    company: "Sterco Digitex Pvt Limited | Delhi, India",
+    stats: [
+      { label: "Animation Modules", value: "40+" },
+      { label: "Quality Rating", value: "4.9/5" }
+    ],
+    highlights: [
+      "Managed learning-based cartoon animation projects and directed production studios.",
+      "Streamlined multi-artist animation workflows to ensure adherence to high artistic benchmarks."
+    ]
+  },
+  {
+    yearText: "2006",
+    period: "NOV 2006 - APR 2010",
+    role: "Sr. 2D Animator",
+    company: "Caltoonz, Dept of Education | Delhi, India",
+    stats: [
+      { label: "Episodes Created", value: "120+" },
+      { label: "Reach", value: "Statewide Schools" }
+    ],
+    highlights: [
+      "Designed comprehensive hand-drawn cartoon animations and educational assets.",
+      "Contributed directly to interactive digital learning modules for Delhi Government school initiatives."
+    ]
+  },
+  {
+    yearText: "2006",
+    period: "JUN 2006 - NOV 2006",
+    role: "2D Animator",
+    company: "Brepo Systems Pvt. Ltd | Delhi, India",
+    stats: [
+      { label: "Software Used", value: "Flash / Toon Boom" },
+      { label: "Assets Rendered", value: "500+" }
+    ],
+    highlights: [
+      "Handled keyframe animation, clean-ups, digital coloring, and basic scene assembly.",
+      "Collaborated closely with visual layout artists to produce illustrated curriculum books."
+    ]
+  }
+];
+---
+
+<div class="curved-timeline-wrapper" id="milestones-component">
+  <div class="timeline-grid-container">
+    
+    <!-- Left Curved Arc Track & Ticking Scale -->
+    <div class="arc-sidebar">
+      <div class="arc-track-container">
+        <svg class="curved-svg-line" viewBox="0 0 160 680" preserveAspectRatio="none">
+          <path 
+            d="M 35 0 C 115 170, 115 510, 35 680" 
+            fill="none" 
+            stroke="rgba(216,180,90,0.3)" 
+            stroke-width="2"
+          />
+        </svg>
+
+        <!-- Moving Ticking Scale Bar synced to active dialer position -->
+        <div class="scale-ticker-bar" id="scale-ticker">
+          <span class="ticker-notch"></span>
+        </div>
+
+        <div class="timeline-nodes-list">
+          {milestones.map((m, index) => {
+            const normalized = (index - 3.5) / 3.5; 
+            const offsetPx = Math.round(35 + 40 * (1 - normalized * normalized));
+
+            return (
+              <button 
+                type="button"
+                class={`timeline-node-btn ${index === 0 ? 'active' : ''}`}
+                data-index={index}
+                style={`transform: translateX(${offsetPx}px);`}
+                aria-label={`Select year ${m.yearText}`}
+              >
+                <span class="node-dot"></span>
+                <span class="node-year-text">{m.yearText}</span>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Content Card Viewport with breathing typography -->
+    <div class="timeline-viewport">
+      {milestones.map((m, index) => (
+        <div class={`milestone-card ${index === 0 ? 'active' : ''}`} data-card-index={index}>
+          
+          <!-- Giant Background Year Watermark inside the popup card top-right -->
+          <div class="card-giant-watermark">
+            <span class="card-watermark-year">{m.yearText}</span>
+          </div>
+
+          <div class="card-top-info">
+            <span class="meta-period">{m.period}</span>
+            <h3>{m.role}</h3>
+            <h4>{m.company}</h4>
+          </div>
+
+          <div class="card-content-split">
+            <div class="stats-table-box">
+              {m.stats.map(st => (
+                <div class="stat-entry">
+                  <span class="stat-value">{st.value}</span>
+                  <span class="stat-label">{st.label}</span>
+                </div>
+              ))}
+              <div class="stat-note">
+                <p>* Statistics stated reflect active operational scope parameters.</p>
+              </div>
+            </div>
+
+            <div class="highlights-list-box">
+              <ul>
+                {m.highlights.map(h => (
+                  <li>{h}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</div>
+
+<script>
+  function initCurvedTimeline() {
+    const root = document.getElementById('milestones-component');
+    if (!root) return;
+
+    const nodeButtons = root.querySelectorAll('.timeline-node-btn');
+    const contentCards = root.querySelectorAll('.milestone-card');
+    const scaleTicker = root.querySelector('#scale-ticker');
+
+    nodeButtons.forEach((btn, idx) => {
+      btn.addEventListener('click', () => {
+        const targetIdx = btn.getAttribute('data-index');
+
+        nodeButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        contentCards.forEach(c => c.classList.remove('active'));
+        const matchingCard = root.querySelector(`[data-card-index="${targetIdx}"]`);
+        if (matchingCard) {
+          matchingCard.classList.add('active');
+        }
+
+        if (scaleTicker) {
+          const percentage = (idx / (nodeButtons.length - 1)) * 100;
+          scaleTicker.style.top = `${percentage}%`;
+        }
+      });
+    });
+  }
+
+  initCurvedTimeline();
+  document.addEventListener('astro:page-load', initCurvedTimeline);
+</script>
+
+<style>
+  .curved-timeline-wrapper {
+    position: relative;
+    width: 100%;
+    padding: 1.5rem 0;
+    color: #f6f4ee;
+  }
+
+  .timeline-grid-container {
+    display: grid;
+    grid-template-columns: 170px minmax(0, 1fr);
+    gap: 1.5rem;
+    align-items: center;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  /* Left Arc Sidebar */
+  .arc-sidebar {
+    position: relative;
+    height: 540px;
+    display: flex;
+    align-items: center;
+  }
+
+  .arc-track-container {
+    position: absolute;
+    inset: 0;
+    width: 150px;
+  }
+
+  .curved-svg-line {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .scale-ticker-bar {
+    position: absolute;
+    left: 2px;
+    top: 0%;
+    transform: translateY(-50%);
+    width: 22px;
+    height: 6px;
+    background: #d8b45a;
+    border-radius: 3px;
+    box-shadow: 0 0 8px rgba(216, 180, 90, 0.7);
+    transition: top 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  .ticker-notch {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .timeline-nodes-list {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 0;
+  }
+
+  .timeline-node-btn {
+    position: relative;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0;
+    text-align: left;
+    transition: transform 0.2s ease, filter 0.2s ease;
+  }
+
+  .timeline-node-btn:hover {
+    filter: brightness(1.2);
+  }
+
+  .node-dot {
+    width: 6px;
+    height: 6px;
+    background: #131316;
+    border: 2px solid rgba(216, 180, 90, 0.5);
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    z-index: 2;
+    flex-shrink: 0;
+  }
+
+  .node-year-text {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    color: #8c8983;
+    letter-spacing: 0.08em;
+    transition: color 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .timeline-node-btn.active .node-dot {
+    width: 14px;
+    height: 14px;
+    background: #d8b45a;
+    border-color: #f6f4ee;
+    box-shadow: 0 0 10px rgba(216, 180, 90, 0.6);
+  }
+
+  .timeline-node-btn.active .node-year-text {
+    color: #d8b45a;
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+
+  /* Right Content Viewport */
+  .timeline-viewport {
+    position: relative;
+    min-height: 440px;
+  }
+
+  .milestone-card {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    background: #131316;
+    border: 1px solid rgba(246, 244, 238, 0.1);
+    border-radius: 14px;
+    padding: 2.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+    overflow: hidden;
+  }
+
+  .milestone-card.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .card-giant-watermark {
+    position: absolute;
+    right: 1.75rem;
+    top: 1.25rem;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .card-watermark-year {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(5rem, 8vw, 7rem);
+    font-weight: 700;
+    color: rgba(216, 180, 90, 0.05);
+    line-height: 1;
+    letter-spacing: -0.04em;
+  }
+
+  .card-top-info {
+    position: relative;
+    z-index: 1;
+  }
+
+  .meta-period {
+    display: inline-block;
+    color: #d8b45a;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.75rem;
+  }
+
+  .card-top-info h3 {
+    margin: 0 0 0.35rem 0;
+    font-size: 1.6rem;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+    color: #f6f4ee;
+  }
+
+  .card-top-info h4 {
+    margin: 0 0 1.5rem 0;
+    font-size: 0.95rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    color: #a5a3a0;
+  }
+
+  .card-content-split {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 1.75rem;
+    align-items: start;
+    border-top: 1px solid rgba(246, 244, 238, 0.08);
+    padding-top: 1.5rem;
+  }
+
+  .stats-table-box {
+    background: #19191d;
+    border: 1px solid rgba(246, 244, 238, 0.06);
+    border-radius: 10px;
+    padding: 1.15rem;
+  }
+
+  .stat-entry {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(246, 244, 238, 0.04);
+  }
+
+  .stat-entry:last-of-type {
+    border-bottom: none;
+  }
+
+  .stat-value {
+    font-family: 'DM Mono', monospace;
+    font-weight: 600;
+    color: #f6f4ee;
+    font-size: 0.88rem;
+    letter-spacing: 0.02em;
+  }
+
+  .stat-label {
+    font-size: 0.78rem;
+    color: #9f9d99;
+    text-align: right;
+    letter-spacing: 0.02em;
+  }
+
+  .stat-note {
+    margin-top: 0.75rem;
+    padding-top: 0.5rem;
+    border-top: 1px dashed rgba(246, 244, 238, 0.1);
+  }
+
+  .stat-note p {
+    margin: 0;
+    font-size: 0.68rem;
+    color: #777570;
+    font-style: italic;
+    letter-spacing: 0.01em;
+  }
+
+  .highlights-list-box ul {
+    margin: 0;
+    padding-left: 1.15rem;
+  }
+
+  .highlights-list-box li {
+    color: #b6b4b0;
+    font-size: 0.88rem;
+    line-height: 1.65;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.01em;
+  }
+
+  .highlights-list-box li::marker {
+    color: #d8b45a;
+  }
+
+  @media (max-width: 900px) {
+    .timeline-grid-container {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .arc-sidebar {
+      height: 120px;
+      width: 100%;
+    }
+    .arc-track-container {
+      width: 100%;
+      height: 100%;
+    }
+    .curved-svg-line, .scale-ticker-bar { display: none; }
+    .timeline-nodes-list {
+      flex-direction: row;
+      gap: 1.5rem;
+      overflow-x: auto;
+      align-items: center;
+      padding: 0 10px;
+    }
+    .timeline-node-btn {
+      flex-direction: column;
+      gap: 6px;
+      flex-shrink: 0;
+      transform: none !important;
+    }
+    .timeline-viewport { min-height: 420px; }
+    .card-content-split { grid-template-columns: 1fr; }
+  }
+</style>
