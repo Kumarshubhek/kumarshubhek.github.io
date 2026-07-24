@@ -2,16 +2,13 @@
 // src/components/Milestones.astro
 const milestones = [
   {
-    yearText: "2023",
-    period: "MAY 2023 - PRESENT",
+    yearText: "2021",
+    period: "Feb 2021 - PRESENT",
     role: "PMO - Senior Project Manager",
     company: "GENPACT | Gurgaon, India",
     stats: [
-      { label: "Client Governments", value: "71" },
-      { label: "Application Centres", value: "4,250" },
-      { label: "Countries of Operation", value: "169" },
-      { label: "Applications Processed*", value: "557.09m" },
-      { label: "Employees", value: "17,897" }
+      { value: "AI & Ops", label: "Workflow Domain" },
+      { value: "PreSales", label: "Pitch and Scale Delivery" }
     ],
     highlights: [
       "Built and scaled the GrowthOps iPith team, leading advanced AI adoption workflows.",
@@ -20,15 +17,12 @@ const milestones = [
   },
   {
     yearText: "2016",
-    period: "AUG 2016 - MAY 2023",
+    period: "AUG 2016 - Feb 2021",
     role: "Project Manager",
-    company: "GENPACT | Gurgaon, India",
+    company: "GENPACT (on third party payroll) | Gurgaon, India",
     stats: [
-      { label: "Client Governments", value: "68" },
-      { label: "Application Centres", value: "3,900" },
-      { label: "Countries of Operation", value: "145" },
-      { label: "Applications Processed*", value: "480.20m" },
-      { label: "Employees", value: "15,400" }
+      { value: "Security", label: "Campaign Focus" },
+      { value: "Gamification WBTs", label: "Global reach" }
     ],
     highlights: [
       "Directed strategic design governance and global cybersecurity awareness campaigns.",
@@ -38,12 +32,11 @@ const milestones = [
   {
     yearText: "2014",
     period: "FEB 2014 - AUG 2016",
-    role: "UX Lead (on third party payroll)",
-    company: "Accenture | Gurgaon, India",
+    role: "UX Lead",
+    company: "Accenture (on third party payroll) | Gurgaon, India",
     stats: [
-      { label: "Design System Modules", value: "45+" },
-      { label: "Global Stakeholders", value: "20+" },
-      { label: "Platforms Delivered", value: "12" }
+      { value: "Architecture", label: "UX Domain" },
+      { value: "Prototyping", label: "Core Execution" }
     ],
     highlights: [
       "Worked as Design Architect Consultant managing cross-functional UX/UI architecture.",
@@ -56,9 +49,8 @@ const milestones = [
     role: "UX Designer",
     company: "Magic Software Pvt Ltd | Noida, India",
     stats: [
-      { label: "Products Designed", value: "28" },
-      { label: "Platforms", value: "Web & iPad" },
-      { label: "Client Satisfaction", value: "98%" }
+      { value: "eLearning", label: "Global Partner" },
+      { value: "Telestration", label: "International" }
     ],
     highlights: [
       "Designed immersive UX/UI solutions, touch-enabled prototypes, and iPad applications.",
@@ -71,8 +63,8 @@ const milestones = [
     role: "Team Lead",
     company: "Espire infolabs | Delhi, India",
     stats: [
-      { label: "Team Members", value: "15" },
-      { label: "Projects Delivered", value: "6" }
+      { value: "eLearning", label: "Production Line" },
+      { value: "Cross-Media", label: "Team Pipeline" }
     ],
     highlights: [
       "Led end-to-end eLearning development and multimedia production pipelines.",
@@ -85,8 +77,8 @@ const milestones = [
     role: "Team Lead",
     company: "Sterco Digitex Pvt Limited | Delhi, India",
     stats: [
-      { label: "Animation Modules", value: "40+" },
-      { label: "Quality Rating", value: "4.9/5" }
+      { value: "Animation", label: "Studio Domain" },
+      { value: "Workflows", label: "Studio Stream" }
     ],
     highlights: [
       "Managed learning-based cartoon animation projects and directed production studios.",
@@ -99,8 +91,8 @@ const milestones = [
     role: "Sr. 2D Animator",
     company: "Caltoonz, Dept of Education | Delhi, India",
     stats: [
-      { label: "Episodes Created", value: "120+" },
-      { label: "Reach", value: "Statewide Schools" }
+      { value: "Education", label: "Module Sector" },
+      { value: "Hand-Drawn", label: "Art Medium" }
     ],
     highlights: [
       "Designed comprehensive hand-drawn cartoon animations and educational assets.",
@@ -113,8 +105,8 @@ const milestones = [
     role: "2D Animator",
     company: "Brepo Systems Pvt. Ltd | Delhi, India",
     stats: [
-      { label: "Software Used", value: "Flash / Toon Boom" },
-      { label: "Assets Rendered", value: "500+" }
+      { value: "Keyframe", label: "Motion Asset" },
+      { value: "Illustration", label: "Book Design" }
     ],
     highlights: [
       "Handled keyframe animation, clean-ups, digital coloring, and basic scene assembly.",
@@ -147,7 +139,7 @@ const milestones = [
         <div class="timeline-nodes-list">
           {milestones.map((m, index) => {
             const normalized = (index - 3.5) / 3.5; 
-            const offsetPx = Math.round(35 + 40 * (1 - normalized * normalized));
+            const offsetPx = Math.round(42 + 42 * (1 - normalized * normalized));
 
             return (
               <button 
@@ -194,7 +186,7 @@ const milestones = [
                 <p>* Statistics stated reflect active operational scope parameters.</p>
               </div>
             </div>
-
+<br />
             <div class="highlights-list-box">
               <ul>
                 {m.highlights.map(h => (
@@ -371,7 +363,7 @@ const milestones = [
     min-height: 440px;
   }
 
-  .milestone-card {
+	.milestone-card {
     position: absolute;
     inset: 0;
     opacity: 0;
@@ -381,7 +373,7 @@ const milestones = [
     background: #131316;
     border: 1px solid rgba(246, 244, 238, 0.1);
     border-radius: 14px;
-    padding: 2.25rem;
+    padding: 1.25rem 2.25rem; /* Reduced top/bottom padding */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -436,30 +428,31 @@ const milestones = [
     color: #f6f4ee;
   }
 
-  .card-top-info h4 {
-    margin: 0 0 1.5rem 0;
+	.card-top-info h4 {
+    margin: 0 0 0.5rem 0; /* Reduced bottom margin right under the company name */
     font-size: 0.95rem;
     font-weight: 400;
     letter-spacing: 0.04em;
     color: #a5a3a0;
   }
 
-  .card-content-split {
+	.card-content-split {
     position: relative;
     z-index: 1;
-    display: grid;
+    /*display: grid;*/
     grid-template-columns: 1.15fr 0.85fr;
     gap: 1.75rem;
     align-items: start;
     border-top: 1px solid rgba(246, 244, 238, 0.08);
-    padding-top: 1.5rem;
+    padding-top: 0.75rem; /* Reduced top padding above the stats and highlights grid */
+	padding-bottom: 7.75rem;
   }
 
   .stats-table-box {
     background: #19191d;
     border: 1px solid rgba(246, 244, 238, 0.06);
     border-radius: 10px;
-    padding: 1.15rem;
+    padding: 1rem;
   }
 
   .stat-entry {
@@ -574,7 +567,7 @@ const milestones = [
     }
 
     .milestone-card {
-      padding: 1.1rem;
+      padding: 0.25rem;
     }
 
     .card-giant-watermark {
@@ -598,8 +591,8 @@ const milestones = [
 
     .card-content-split {
       grid-template-columns: 1fr;
-      gap: 0.85rem;
-      padding-top: 0.85rem;
+      gap: 0.5rem;
+      padding-top: 0.25rem;
     }
 
     .stats-table-box {
