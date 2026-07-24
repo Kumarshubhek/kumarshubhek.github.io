@@ -12,8 +12,8 @@ const navItems = [
 const work = [
   [
     'AI',
-    'Dynamic Dashboards',
-    'Enterprise dashboards for AI-driven decision making and digital transformation initiatives for the leadership.',
+    'Executive Dashboards',
+    'Enterprise dashboards for AI-driven decision making and digital transformation initiatives.',
     'Dashboard Screenshots'
   ],
   [
@@ -223,13 +223,13 @@ const capabilities = [
                 </div>
                 <small>{placeholder}</small>
               </div>
-              <div class="work-copy"><h3>{title}</h3><p>{copy}</p><span>View Portfolio (Coming soon)<b>↗</b></span></div>
+              <div class="work-copy"><h3>{title}</h3><p>{copy}</p><span>View Portfolio<b>↗</b></span></div>
             </article>
           ))}
         </div>
       </section>
 
-      <!-- Section 04: People (Restored back to original layout & background theme with consistent heading typography) -->
+      <!-- Section 04: People -->
       <section id="people" class="section people-section">
         <div class="container people-layout">
           <div class="people-copy">
@@ -349,7 +349,7 @@ const capabilities = [
     font-weight: 500;
   }
 
-  1 em {
+  h1 em {
     color: #d8b45a;
     font-family: 'Playfair Display', Georgia, serif;
     font-style: italic;
@@ -493,7 +493,6 @@ const capabilities = [
   .work-copy span { display: block; margin-top: 1.5rem; color: #d8b45a; font-family: 'DM Mono', monospace; font-size: .6rem; text-transform: uppercase; }
   .work-copy b { margin-left: .4rem; }
   
-  /* Section 04 Styles Restored (Original People Section Layout) */
   .people-section { background: #e4dfd5; color: #141416; }
   .people-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
   .people-copy .eyebrow { color: #98761f; }
@@ -501,7 +500,6 @@ const capabilities = [
   .people-copy .text-link { display: inline-block; margin-top: 1.5rem; color: #141416; font-weight: 700; }
   .people-copy .text-link span { color: #98761f; }
 
-  /* Unwrapped Bullets Style for Section 04 */
   .stats-list {
     display: flex;
     flex-direction: column;
