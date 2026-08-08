@@ -330,8 +330,8 @@ const capabilities = [
 
     <div class="linkedin-signals">
       <div><br> 
-        <strong>19+</strong>
-        <span>Years evolving</span>  |  <strong>10+</strong><span>Years at Genpact</span>  |  <strong>CSM®</strong><span>Agile mindset</span>  |  <strong>AI × Creative</strong><span> Current focus</span>
+        <strong>2K</strong>
+        <span>followers</span>  |  <strong>500+</strong><span>connections</span>
       </div>
     </div>
 	 <br> <a
@@ -416,7 +416,7 @@ const capabilities = [
     max-width: 810px;
     margin-bottom: 2rem;
     font-size: clamp(3rem, 5.2vw, 5rem);
-    line-height: 1.15;
+    line-height: 0.98;
     letter-spacing: -0.012em;
     font-weight: 500;
   }
@@ -659,7 +659,27 @@ const capabilities = [
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
-  .button-outline { border: 1px solid rgba(246,244,238,.35); color: #f6f4ee; }
+  .button-outline 
+  { 
+  border: 1px solid #98761f;
+  color: #fcc522;
+  background: transparent;
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+	}
+	.button-outline:hover {
+  border-color: #d8b45a;
+  background: #fcc522;
+  color: #0b0b0d;
+  transform: translateY(-2px);
+}
+
+.button-outline:hover span {
+  color: #0b0b0d;
+}
   
   .contact-section { padding: 10rem 0; background: #d8b45a; color: #151518; }
   .contact-inner { text-align: center; }
